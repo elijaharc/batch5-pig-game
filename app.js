@@ -50,7 +50,6 @@ function start(){
         else{
             targetScore = parseInt(prompt("Enter a number!"));
         }
-        
     }
     GOAL.innerHTML = targetScore;
 }
@@ -59,6 +58,7 @@ function start(){
 function roll(){
     if(targetScore === null){
         start();
+        return;
     }
     let r = Math.ceil(Math.random()*6);
     let source = "dice-" + r + ".png";
@@ -91,6 +91,7 @@ function roll(){
 function hold(){
     if(targetScore === null){
         start();
+        return;
     }
     if(player1Turn){
         player1Score = player1Score + currentScore;
